@@ -1,7 +1,7 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Next.js Starter Blog',
-  author: 'Tails Azimuth',
+  title: 'Circular Builder',
+  author: 'Yuncheng Yang',
   headerTitle: 'Circular Builder',
   description: 'A blog created to make circular economy more accessible to the build world.',
   language: 'en-us',
