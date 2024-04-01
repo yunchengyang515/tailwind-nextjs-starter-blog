@@ -71,20 +71,13 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                           className="h-10 w-10 rounded-full"
                         />
                       )}
-                      <dl className="whitespace-nowrap text-sm font-medium leading-5">
+                      <dl className="whitespace-nowrap text-xs font-medium leading-5">
                         <dt className="sr-only">Name</dt>
-                        <dd className="text-gray-900 dark:text-gray-100">{author.name}</dd>
-                        <dt className="sr-only">Twitter</dt>
-                        <dd>
-                          {author.twitter && (
-                            <Link
-                              href={author.twitter}
-                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                            >
-                              {author.twitter.replace('https://twitter.com/', '@')}
-                            </Link>
-                          )}
+                        <dd className="text-gray-900 dark:text-gray-100">
+                          <Link href={`/${author.slug}`}>{author.name}</Link>
                         </dd>
+                        <dt className="sr-only">Twitter</dt>
+                        <dd>{author.occupation}</dd>
                       </dl>
                     </li>
                   ))}
