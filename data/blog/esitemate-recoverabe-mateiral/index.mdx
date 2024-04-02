@@ -1,0 +1,51 @@
+---
+title: Estimate the quality and quantity of recoverable material
+date: '2024-04-01'
+tags:
+  ['demolition', 'construction materials', 'recycling', 'circular economy', 'end-of-life project']
+draft: false
+authors: [soheila, yuncheng]
+summary: Introducing a framework for estimating the quality and quantity of recoverable materials from end-of-life building projects, supported by a mathematical model.
+---
+
+Welcome to the inaugural post in our series: "Decision Support Tools for End-of-Life Projects." This series aims to offer effective tools for building owners and project managers working on end-of-life projects, helping them make informed decisions about material recovery and the next steps for their projects.
+
+## Background
+
+As a building owner or manager of an end-of-life building, you may find it hard to decide what the next steps are. Landfill costs are rising each year, and you may wonder if you can sell some of the materials from the building in hopes of recovering some value. But it is difficult to estimate how much material you can recover and determine the quality of those materials. Perhaps the building is too old to recover anything valuable, and it should just be demolished?
+
+The industry lacks a clear framework for assessing material reusability, leaving stakeholders with tough decisions regarding material recovery or demolition. This blog post introduces a framework that uses a mathematical model to estimate the recoverable materials in terms of quantity and quality. This evaluation assists in making informed decisions about the feasibility of material recovery for reuse.
+
+The model and example come from [a research paper](https://www.emerald.com/insight/content/doi/10.1108/WJSTSD-05-2018-0041/full/html) published in 2018, by Lukman Akanbi and others.
+
+## Data Preparation
+
+First, we need to determine the life expectancy of each building material. Finding data specific to a region can be challenging. However, a widely recognized source is an online survey conducted by BCIS in 2018. Here we used the data from the same research paper (Akanbi et al., 2018)
+
+Then we should establish a list of material and which building component it is used for, making sure you can find the corresponding Life Expectancy.
+
+![life expectancy](/static/images/blog-1/life-expectancy.png)
+
+## Prediction
+
+The research paper by Akanbi et al., 2018, demonstrates that material performance starts to drop significantly after reaching a critical point. For example, concrete used in frame components can maintain consistent performance for about 70 years, but by year 72, performance may decrease sharply.
+
+Thus, we aim to understand not only the current recoverable quantity and quality but also to predict future performance over the next decade or more, to help make better decisions on the destinations of these materials.
+
+## Example
+
+![Example](/static/images/blog-1/example.png)
+
+Above is an example of a building project and estimation I've created. You can adjust parameters including the Age of the Building, Quality Prediction Years, and Quantity. It calculates the recoverable amount and quality of materials for a 65-year-old building, along with a prediction of material performance 10 years into the future. If you have a better estimate of the average life expectancy of materials, you can also modify the input data accordingly.
+
+This model gives a rough estimate of the quality and quantity of materials you might recover, which could help in diverting waste from landfills.
+
+You can [download the model](https://docs.google.com/spreadsheets/d/1qILr6EGc16o7ONIfVrbHjuA9RY2p01dbHfQhg2Bikws/edit?usp=sharing) as excel spreadsheet. By access the link and export the Google Sheet as .xlsx file.
+
+![Download Instruction](/static/images/blog-1/download.png)
+
+## Future Work
+
+In upcoming blog posts, we plan to further improve our toolset for estimating the recoverable value from End-of-Life (EoL) projects. This includes integrating BIM tools and material passports to streamline data collection, as well as apply more sophisticated methods like Monte Carlo simulations to account for uncertainty.
+
+Stay tuned!

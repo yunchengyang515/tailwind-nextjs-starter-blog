@@ -71,20 +71,13 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
                           className="h-10 w-10 rounded-full"
                         />
                       )}
-                      <dl className="whitespace-nowrap text-sm font-medium leading-5">
+                      <dl className="whitespace-nowrap text-xs font-medium leading-5">
                         <dt className="sr-only">Name</dt>
-                        <dd className="text-gray-900 dark:text-gray-100">{author.name}</dd>
-                        <dt className="sr-only">Twitter</dt>
-                        <dd>
-                          {author.twitter && (
-                            <Link
-                              href={author.twitter}
-                              className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                            >
-                              {author.twitter.replace('https://twitter.com/', '@')}
-                            </Link>
-                          )}
+                        <dd className="text-gray-900 dark:text-gray-100">
+                          <Link href={`/${author.slug}`}>{author.name}</Link>
                         </dd>
+                        <dt className="sr-only">Twitter</dt>
+                        <dd>{author.occupation}</dd>
                       </dl>
                     </li>
                   ))}
@@ -93,13 +86,7 @@ export default function PostLayout({ content, authorDetails, next, prev, childre
             </dl>
             <div className="divide-y divide-gray-200 dark:divide-gray-700 xl:col-span-3 xl:row-span-2 xl:pb-0">
               <div className="prose max-w-none pb-8 pt-10 dark:prose-invert">{children}</div>
-              <div className="pb-6 pt-6 text-sm text-gray-700 dark:text-gray-300">
-                <Link href={discussUrl(path)} rel="nofollow">
-                  Discuss on Twitter
-                </Link>
-                {` • `}
-                <Link href={editUrl(filePath)}>View on GitHub</Link>
-              </div>
+
               {siteMetadata.comments && (
                 <div
                   className="pb-6 pt-6 text-center text-gray-700 dark:text-gray-300"
